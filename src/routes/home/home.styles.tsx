@@ -7,17 +7,43 @@ export const HomeContainer = styled(Grid)`
   margin-bottom: 25px;
 `
 
-export const Character = styled.img`
+export const FullImage = styled.img`
   width:100%;
   -webkit-transform: scaleX(-1);
   transform: scaleX(-1);
+  @media only screen and (max-width: 768px){
+    padding-left: 25px;
+    padding-right:25px;
+  }
 `
 
 export const Heading = styled.h1`
   font-size: 2.4em;
-  padding-left: 50px;
+  padding: 0 50px;
   & span{
     color: var(--bs-indigo)
+  }
+  @media only screen and (max-width: 768px){
+    padding-left: 25px;
+    padding-right:25px;
+  }
+`
+
+export const Description = styled.h2`
+  font-size: 1.5em;
+  padding: 0 50px;
+  & span{
+    color: var(--bs-indigo)
+  }
+  & .blue{
+    color: var(--bs-blue)
+  }
+  & .red{
+    color: var(--bs-red)
+  }
+  @media only screen and (max-width: 768px){
+    padding-left: 25px;
+    padding-right:25px;
   }
 `
 

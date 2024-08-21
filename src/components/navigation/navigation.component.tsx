@@ -43,6 +43,7 @@ const Navigation = () => {
 					</NavLink>
 				</NavLinksContainer>
 				<MenuButton 
+					sx={{color:"var(--bs-indigo)"}}
 					aria-controls={open ? 'positioned-menu' : undefined}
 					aria-haspopup="true"
 					aria-expanded={open ? 'true' : undefined}
