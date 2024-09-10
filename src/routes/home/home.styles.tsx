@@ -29,23 +29,40 @@ export const Heading = styled.h1`
   }
 `
 
+export const Answer = styled.span`
+  
+`
+
 export const Description = styled.h2`
   font-size: 1.5em;
   padding: 0 50px;
-  & span{
+  & span.purple{
     color: var(--bs-indigo)
   }
-  & .blue{
+  & span.blue{
     color: var(--bs-blue)
   }
-  & .red{
+  & span.red{
     color: var(--bs-red)
+  }
+  & ${Answer}{
+    &:not(:hover){
+      color: transparent;
+      background-color: var(--bs-purple);
+      border-radius: 5px;
+      transition: 0.6s;
+      & > span{
+        color: transparent;
+        transition: 0.6s;
+      }
+    }
   }
   @media only screen and (max-width: 768px){
     padding-left: 25px;
     padding-right:25px;
   }
 `
+
 
 export const Wave = styled.span`
   animation-name: wave-animation;

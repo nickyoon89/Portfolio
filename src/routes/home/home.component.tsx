@@ -1,10 +1,15 @@
 import Typewriter from "typewriter-effect";
 import { Grid } from "@mui/material";
-import { Description, FullImage, Heading, HomeContainer, Wave } from "./home.styles";
+import { Answer, Description, FullImage, Heading, HomeContainer, Wave } from "./home.styles";
 import CharacterImg from '../../assets/home/character.png'
 import TriviaImg from '../../assets/home/trivia.png'
+import { useEffect, useState } from "react";
 
 const Home = () => {
+  const [isDesktop, seIsDesktop] = useState(true);
+  useEffect(() => {
+    window.innerWidth > 1280 ? seIsDesktop(true) : seIsDesktop(false);
+  }, [isDesktop]);
   return (
       <HomeContainer container>
         <Grid item md={7} xs={12} justifyContent={"center"} >
@@ -35,9 +40,11 @@ const Home = () => {
           <Heading>A LITTLE <span>TRIVIA</span> ABOUT MYSELF</Heading>
           <Description>
             <ul>
-              <li>From <span className="blue">Ko</span><span className="red">rea</span>, Living in <span className="red">C</span>a<span className="red">na</span>d<span className="red">a</span></li>
-              <li><span>HOBBY</span>: Hiking, Video Gaming (Trying to make one too!), GYM</li>
-              <li></li>
+            <span>({isDesktop?"Hover":"Click"} to Reveal!)</span>
+              <li><span className="purple">Where I am</span>: <Answer className="revealed">From Korea🇰🇷 Living in Canada🇨🇦</Answer></li>
+              <li><span className="purple">Hobbies</span>: <Answer>Hiking, Video Game (Making one too!), Drawing, GYM</Answer></li>
+              <li><span className="purple">Favorite TV Show</span>: <Answer>Friends</Answer></li>
+              <li><span className="purple">Favorite Movie</span>: <Answer>Before Sunrise</Answer></li>
             </ul>
           </Description>
         </Grid>

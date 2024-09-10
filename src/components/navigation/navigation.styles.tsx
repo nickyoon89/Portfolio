@@ -33,9 +33,14 @@ export const NavLinksContainer = styled.div`
 export const NavLink = styled(Link)`
   padding: 10px 15px;
   display:flex;
+  transition: 0.3s;
   cursor: pointer;
   & svg{
     margin-right:3px;
+  }
+  &:hover{
+    background-color: var(--bs-indigo);
+    border-radius: 5px;
   }
 `
 
